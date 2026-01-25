@@ -2,22 +2,24 @@ import Nav from "./components/nav";
 import { ArrowRightCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Recommended from "./components/recommended";
+import DailySells from "./components/dailySells";
 export default function Page() {
   return (
     <>
       <header>
         <Nav />
 
-        <div className="hero bg-(image:--hero-background)">
+        <div className="hero bg-(image:--hero-background) bg-cover bg-center bg-no-repeat">
           <div className="max-w-7xl mx-auto px-6 py-20 sm:flex">
             <div className="flex flex-col gap-1">
-              <p className="text-[15px] tracking-wide font-semibold text-gray-800">
+              <p className="text-[15px] tracking-wide font-semibold text-[#666664]">
                 Super Delicious
               </p>
               <h4 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-white">
                 THE BEST WAY TO <br /> STUFF YOUR WALLET.
               </h4>
-              <p className="max-w-md text-[12px] text-gray-800 font-semibold">
+              <p className="max-w-md text-[12px] text-[#666664] font-semibold">
                 Today&apos;s Best Deal
               </p>
 
@@ -37,11 +39,16 @@ export default function Page() {
                 width={500}
                 height={500}
                 alt="hero image"
-                className="max-w-full md:w-120 xl:w-150 object-contain drop-shadow-2xl"
+                className="max-w-full md:w-120 xl:w-180 object-contain drop-shadow-2xl"
               />
             </div>
           </div>
         </div>
+
+        <section className="sm:mx-20 xl:mx-60">
+          <Recommended />
+          <DailySells />
+        </section>
       </header>
     </>
   );
