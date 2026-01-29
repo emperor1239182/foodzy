@@ -85,10 +85,10 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --order-button: #f5cb42;
-  --hero-background: url('/assets/bg(1).png'), url('/assets/bg.png');
+  --hero-background: url('/assets/bgShadow.png'), url('/assets/bg.png');
   --p1-color: #f54747;
   --p2-color: rgb(81, 79, 79);
-  --daily-hero: url('/assets/productsReview.png');
+  --daily-hero: url('/assets/bestSales.png');
 }
 
 .dark {

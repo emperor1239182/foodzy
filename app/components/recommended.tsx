@@ -46,7 +46,7 @@ export default function Recommended() {
               <div className="bg-gray-300 rounded-full p-2 flex justify-center items-center">
                 <Image src={meals.image} width={25} height={25} alt="burger" />
               </div>
-              <p className="font-bold max-xl:text-[15px]">{meals.name}</p>
+              <p className="font-bold max-xl:text-[13px]">{meals.name}</p>
               <p className="text-gray-400 text-[13px]">({meals.amount})</p>
             </div>
           ))}

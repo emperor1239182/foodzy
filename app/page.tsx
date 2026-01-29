@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Recommended from "./components/recommended";
 import DailySells from "./components/dailySells";
+
 export default function Page() {
   return (
     <>

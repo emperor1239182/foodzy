@@ -1,0 +1,250 @@
+const productsData = [
+  {
+    name: "Classic Beef Burger",
+    price: 8.99,
+    category: "Food",
+    image: "/images/burger.jpg",
+    stock: 45,
+    description: "A juicy grilled beef burger layered with fresh lettuce, ripe tomatoes, melted cheese, and a soft toasted bun. Perfect for quick meals, dinner cravings, or satisfying your hunger after a long day.",
+    isNew: true,
+    sold: 120,
+    rating: 4.6,
+    tag: "popular"
+  },
+  {
+    name: "Cheese Pizza Slice",
+    price: 3.5,
+    category: "Food",
+    image: "/images/pizza.jpg",
+    stock: 100,
+    description: "A hot, freshly baked cheese pizza slice with a crispy crust and rich tomato sauce, topped with stretchy mozzarella cheese that melts perfectly and delivers a classic Italian flavor experience.",
+    isNew: false,
+    sold: 340,
+    rating: 4.7,
+    tag: "bestseller"
+  },
+  {
+    name: "Spicy Chicken Wings",
+    price: 6.75,
+    category: "Food",
+    image: "/images/wings.jpg",
+    stock: 60,
+    description: "Crispy chicken wings coated in a bold spicy sauce that balances heat and flavor. Ideal for game nights, parties, or anyone who enjoys a satisfying crunchy and juicy snack.",
+    isNew: true,
+    sold: 98,
+    rating: 4.4,
+    tag: "hot"
+  },
+  {
+    name: "Fresh Red Apples",
+    price: 2.99,
+    category: "Fruit",
+    image: "/images/apple.jpg",
+    stock: 200,
+    description: "Crisp and juicy red apples harvested from healthy orchards. These apples are naturally sweet, rich in fiber, and perfect for snacking, baking desserts, or preparing fresh fruit salads.",
+    isNew: false,
+    sold: 410,
+    rating: 4.8,
+    tag: "healthy"
+  },
+  {
+    name: "Organic Bananas",
+    price: 1.89,
+    category: "Fruit",
+    image: "/images/banana.jpg",
+    stock: 180,
+    description: "Naturally ripened organic bananas that are soft, sweet, and packed with potassium. Excellent for smoothies, breakfast meals, baking recipes, or enjoying as a quick healthy snack.",
+    isNew: false,
+    sold: 520,
+    rating: 4.9,
+    tag: "organic"
+  },
+  {
+    name: "Sweet Strawberries Pack",
+    price: 4.25,
+    category: "Fruit",
+    image: "/images/strawberry.jpg",
+    stock: 90,
+    description: "Bright red strawberries with a sweet aroma and juicy bite. Perfect for desserts, yogurt bowls, smoothies, or eating fresh when you need a refreshing and nutritious fruit option.",
+    isNew: true,
+    sold: 130,
+    rating: 4.6,
+    tag: "fresh"
+  },
+  {
+    name: "Crunchy Potato Chips",
+    price: 2.5,
+    category: "Snack",
+    image: "/images/chips.jpg",
+    stock: 150,
+    description: "Thinly sliced potatoes fried to golden perfection and lightly salted for a satisfying crunch. A classic snack choice for movie nights, parties, or casual everyday enjoyment.",
+    isNew: false,
+    sold: 600,
+    rating: 4.3,
+    tag: "snack"
+  },
+  {
+    name: "Chocolate Chip Cookies",
+    price: 3.99,
+    category: "Snack",
+    image: "/images/cookies.jpg",
+    stock: 120,
+    description: "Soft baked cookies filled with rich chocolate chips that melt in every bite. Ideal for dessert moments, lunchbox treats, or pairing with a warm cup of tea or coffee.",
+    isNew: true,
+    sold: 275,
+    rating: 4.7,
+    tag: "sweet"
+  },
+  {
+    name: "Salted Popcorn",
+    price: 1.99,
+    category: "Snack",
+    image: "/images/popcorn.jpg",
+    stock: 160,
+    description: "Light and fluffy popcorn seasoned with fine salt to enhance its natural flavor. Perfect for home entertainment, relaxing evenings, or sharing with friends during movie sessions.",
+    isNew: false,
+    sold: 340,
+    rating: 4.2,
+    tag: "light"
+  },
+  {
+    name: "Mango Fruit Bowl",
+    price: 3.75,
+    category: "Fruit",
+    image: "/images/mango.jpg",
+    stock: 70,
+    description: "Freshly cut mango pieces served in a convenient bowl. Bursting with tropical sweetness, this fruit bowl is refreshing, energizing, and perfect for healthy daily nutrition.",
+    isNew: true,
+    sold: 150,
+    rating: 4.6,
+    tag: "tropical"
+  },
+  {
+    name: "Grilled Chicken Sandwich",
+    price: 7.25,
+    category: "Food",
+    image: "/images/sandwich.jpg",
+    stock: 55,
+    description: "Tender grilled chicken breast layered with fresh vegetables and creamy sauce inside soft bread. A balanced meal option that delivers flavor, protein, and satisfying fullness.",
+    isNew: false,
+    sold: 190,
+    rating: 4.5,
+    tag: "lunch"
+  },
+  {
+    name: "Fried Plantain Chips",
+    price: 2.8,
+    category: "Snack",
+    image: "/images/plantain.jpg",
+    stock: 110,
+    description: "Crispy fried plantain chips with a slightly sweet taste and crunchy texture. A popular snack enjoyed on its own or paired with dips and refreshing beverages.",
+    isNew: true,
+    sold: 165,
+    rating: 4.4,
+    tag: "local"
+  },
+  {
+    name: "Fresh Orange Pack",
+    price: 3.1,
+    category: "Fruit",
+    image: "/images/orange.jpg",
+    stock: 140,
+    description: "Juicy oranges packed with vitamin C and natural sweetness. These fruits are excellent for boosting immunity, preparing fresh juice, or enjoying as a refreshing snack.",
+    isNew: false,
+    sold: 260,
+    rating: 4.5,
+    tag: "vitamin"
+  },
+  {
+    name: "Hot Dog Roll",
+    price: 2.95,
+    category: "Food",
+    image: "/images/hotdog.jpg",
+    stock: 75,
+    description: "A warm hot dog sausage tucked into a soft bun and topped with flavorful sauces. Ideal for quick meals, casual gatherings, or when you need something filling and tasty.",
+    isNew: false,
+    sold: 210,
+    rating: 4.3,
+    tag: "fastfood"
+  },
+  {
+    name: "Mixed Fruit Salad",
+    price: 4.6,
+    category: "Fruit",
+    image: "/images/fruit-salad.jpg",
+    stock: 65,
+    description: "A colorful mix of apples, grapes, mangoes, and bananas carefully prepared for freshness. This fruit salad offers natural sweetness, hydration, and essential nutrients.",
+    isNew: true,
+    sold: 145,
+    rating: 4.7,
+    tag: "healthy"
+  },
+  {
+    name: "Chocolate Energy Bar",
+    price: 1.75,
+    category: "Snack",
+    image: "/images/energy-bar.jpg",
+    stock: 130,
+    description: "A compact chocolate energy bar made with grains and nuts to provide a quick boost. Perfect for busy schedules, workouts, or light hunger between meals.",
+    isNew: false,
+    sold: 390,
+    rating: 4.4,
+    tag: "energy"
+  },
+  {
+    name: "Vanilla Cupcake",
+    price: 2.35,
+    category: "Snack",
+    image: "/images/cupcake.jpg",
+    stock: 85,
+    description: "Soft vanilla cupcake topped with creamy frosting and subtle sweetness. A delightful dessert option for celebrations, personal treats, or casual sweet cravings.",
+    isNew: true,
+    sold: 175,
+    rating: 4.6,
+    tag: "dessert"
+  },
+  {
+    name: "Beef Meat Pie",
+    price: 2.9,
+    category: "Food",
+    image: "/images/meatpie.jpg",
+    stock: 95,
+    description: "Golden baked meat pie filled with seasoned minced beef and vegetables. A popular snack-meal combination that delivers warmth, flavor, and satisfying texture.",
+    isNew: false,
+    sold: 305,
+    rating: 4.5,
+    tag: "pastry"
+  },
+  {
+    name: "Watermelon Slices",
+    price: 3.4,
+    category: "Fruit",
+    image: "/images/watermelon.jpg",
+    stock: 80,
+    description: "Fresh watermelon slices that are juicy, hydrating, and naturally sweet. Perfect for hot weather refreshment, fruit platters, or light healthy snacking.",
+    isNew: true,
+    sold: 160,
+    rating: 4.6,
+    tag: "refreshing"
+  },
+  {
+    name: "Cheese Nachos",
+    price: 4.15,
+    category: "Snack",
+    image: "/images/nachos.jpg",
+    stock: 70,
+    description: "Crunchy tortilla chips covered in warm melted cheese and light seasoning. A flavorful snack option for sharing, casual dining, or enjoying during entertainment moments.",
+    isNew: false,
+    sold: 230,
+    rating: 4.4,
+    tag: "party"
+  }
+];
+
+
+fetch('http://localhost:3000/api/products', {
+    method : 'POST',
+    headers : {'content-type' : 'application/json'},
+    body : JSON.stringify(productsData)
+}).then(res => res.json())
+.then(data => console.log(data));
