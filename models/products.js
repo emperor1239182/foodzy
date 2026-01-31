@@ -11,7 +11,7 @@ const ProductsSchema = new Schema(
     image: String,
     category: String,
     stock: { type: Number, default: 0 },
-    isNew: { type: Boolean, default: true },
+    recent: { type: Boolean, default: true },
     sold : Number,
     rating : Number,
     tag : String

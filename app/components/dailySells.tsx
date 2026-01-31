@@ -1,6 +1,34 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProductsType } from "@/lib/types";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
 export default function DailySells() {
+  const [products, setProducts] = useState<ProductsType[]>([]);
+
+  useEffect(() => {
+    async function getNew() {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/products/productsData",
+        );
+
+        if (!response.ok) {
+          throw new Error("failed to fetch products");
+        }
+
+        const items = await response.json();
+        setProducts(items.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    getNew();
+  }, []);
+
   return (
     <section className="mt-8 ">
       <div className="hidden sm:flex justify-between items-center mb-4">
@@ -29,7 +57,6 @@ export default function DailySells() {
             <ArrowRight />
           </Button>
         </div>
-
       </div>
 
       {/*mobile best sales*/}
@@ -44,6 +71,22 @@ export default function DailySells() {
         </div>
       </div>
 
+      {/*fetch the best sales product from the api*/}
+
+      {products && products.length > 0 && (
+        <div>
+          {products.map((item: ProductsType, index: number) => (
+            <div key={index}>
+              <Image
+                src={item.image}
+                alt="new products"
+                width={100}
+                height={100}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

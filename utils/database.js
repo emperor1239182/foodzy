@@ -13,7 +13,7 @@ export const connectToDB = async () => {
     try{
         await mongoose.connect(process.env.MONGODB_URI, {
             dbName: "Foodzy",
-            serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+            serverSelectionTimeoutMS: 30000, 
             socketTimeoutMS: 45000,
         });
         
@@ -22,6 +22,6 @@ export const connectToDB = async () => {
     } catch(error) {
         console.error("MongoDB connection error:", error);
         isConnected = false;
-        throw error; // Re-throw to handle in API route
+        throw error; 
     }
 };

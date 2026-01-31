@@ -10,7 +10,7 @@ export interface ProductsType {
     image : string 
     stock : number
     description : string
-    isNew : boolean
+    recent : boolean
     sold : number
     rating : number
     tag : string
