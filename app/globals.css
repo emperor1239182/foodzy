@@ -49,6 +49,7 @@
   --color-p1-color: var(--p1-color);
   --bg-daily-hero: var(--daily-hero);
   --color-p2-color: var(--p2-color);
+  --color-p3-color: var(--p3-color);
 }
 
 :root {
@@ -87,7 +88,8 @@
   --order-button: #f5cb42;
   --hero-background: url('/assets/bgShadow.png'), url('/assets/bg.png');
   --p1-color: #f54747;
-  --p2-color: rgb(81, 79, 79);
+  --p2-color: #ADADAD;
+  --p3-color: #3BB77E;
   --daily-hero: url('/assets/bestSales.png');
 }
 

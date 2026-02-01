@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Recommended from "./components/recommended";
 import DailySells from "./components/dailySells";
+import SpecialDishes from "./components/specialDishes";
 
 export default function Page() {
   return (
@@ -46,9 +47,10 @@ export default function Page() {
           </div>
         </div>
 
-        <section className="sm:mx-20 xl:mx-60">
+        <section className="sm:mx-20 xl:mx-60 ">
           <Recommended />
           <DailySells />
+          <SpecialDishes/>
         </section>
       </header>
     </>

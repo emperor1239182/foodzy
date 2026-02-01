@@ -133,7 +133,7 @@ const productsData = [
     name: "Grilled Chicken Sandwich",
     price: 7.25,
     category: "Food",
-    image: "/assets/toast bread.png",
+    image: "/assets/toastbread.png",
     stock: 55,
     description:
       "Toasted bread slices, perfect for making sandwiches, bruschetta, or enjoying with butter and spreads — simple, versatile, and freshly baked.",
