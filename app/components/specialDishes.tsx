@@ -3,6 +3,7 @@ import { LucideChevronLeft, LucideChevronRight, Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ProductsType } from "@/lib/types";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import SpecialDishesSkeleton from "./loadingSkeleton/specialDishesSkeleton";
 import {
@@ -15,7 +16,7 @@ import {
 export default function SpecialDishes() {
   const [dishes, setDishes] = useState<ProductsType[]>([]);
   const [loading, setLoading] = useState(false);
-
+  const [arrow, setArrow] = useState<"left" | "right">();
 
   useEffect(() => {
     const getDishes = async () => {
@@ -52,11 +53,17 @@ export default function SpecialDishes() {
           Standout Dishes <br /> From Our Menu
         </h1>
         <div className="flex gap-3 items-center">
-          <div className="rounded-full border-0 bg-p2-color p-2">
-            <LucideChevronLeft size={20} />
+          <div
+            className={cn("rounded-full border-0 bg-p2-color p-1 sm:p-2", arrow === "left" && "bg-p1-color text-white")}
+            onClick={() => setArrow("left")}
+          >
+            <LucideChevronLeft size={15} />
           </div>
-          <div className="rounded-full border-0 bg-p2-color p-2">
-            <LucideChevronRight size={20} />
+          <div
+            className={cn("rounded-full border-0 bg-p2-color p-1 sm:p-2", arrow === "right" && "bg-p1-color text-white")}
+            onClick={() => setArrow("right")}
+          >
+            <LucideChevronRight size={15} />
           </div>
         </div>
       </div>
@@ -73,7 +80,7 @@ export default function SpecialDishes() {
           {dishes.map((dish, index) => (
             <div
               key={index}
-              className="flex flex-col gap-2 items-center border-0 p-2 rounded-xl shadow-2xl relative"
+              className="flex flex-col gap-1 items-center border-0 p-2 rounded-xl shadow-2xl relative"
             >
               <div className="flex justify-center items-center w-40 h-40 p-2 rounded">
                 <Image
@@ -93,15 +100,11 @@ export default function SpecialDishes() {
                 <Heart />
               </Button>
               <Accordion type="single" collapsible className="max-w-lg">
-                 <AccordionItem key={dish.name} value={dish.name}>
-                <AccordionTrigger>
-                  
-                    View full details
-                
-                </AccordionTrigger>
-                 <AccordionContent className="text-[13px] font-semibold">
-                  {dish.description}
-                </AccordionContent>
+                <AccordionItem key={dish.name} value={dish.name}>
+                  <AccordionTrigger>View full details</AccordionTrigger>
+                  <AccordionContent className="text-[13px] font-semibold">
+                    {dish.description}
+                  </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>

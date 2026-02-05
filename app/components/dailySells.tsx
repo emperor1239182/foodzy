@@ -133,7 +133,7 @@ export default function DailySells() {
                 </p>
               </div>
 
-              <Button variant={"destructive"} className="mt-auto">
+              <Button variant={"destructive"} className="mt-auto h-7">
                 Add To Cart
               </Button>
             </div>

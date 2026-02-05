@@ -13,12 +13,15 @@ export async function GET(request) {
 
     let products;
 
-    if (type === "recent") {
-      products = await Products.find({ recent: true }).limit(6);
-    } else if (category === "Food") {
-      products = await Products.find({ category: "Food"}).limit(6);
-    } else {
-      products = await Products.find().limit(6);
+    switch(type | category){
+      case type === "recent" :
+        products = await Products.find({ recent: true }).limit(6);
+        break;
+      case category === "Food" :
+        products = await Products.find({ category: "Food"}).limit(6);
+        break;
+        default :
+        products = await Products.find().limit(6);
     }
 
     return NextResponse.json(

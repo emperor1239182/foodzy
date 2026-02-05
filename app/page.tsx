@@ -5,6 +5,7 @@ import Image from "next/image";
 import Recommended from "./components/recommended";
 import DailySells from "./components/dailySells";
 import SpecialDishes from "./components/specialDishes";
+import DealsOfTheDay from "./components/dealsOfTheDay";
 
 export default function Page() {
   return (
@@ -51,6 +52,7 @@ export default function Page() {
           <Recommended />
           <DailySells />
           <SpecialDishes/>
+          <DealsOfTheDay/>
         </section>
       </header>
     </>
