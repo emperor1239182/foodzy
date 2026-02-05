@@ -5,18 +5,24 @@ import { ProductsType } from "@/lib/types";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Gudea } from "next/font/google";
+import DailySellsSkeleton from "./loadingSkeleton/dailySellsSkeleton";
 
 const gudea = Gudea({
   weight: ["700"],
   subsets: ["latin"],
 });
 
+
+
+
 export default function DailySells() {
   const [products, setProducts] = useState<ProductsType[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getNew() {
       try {
+        setIsLoading(true)
         const response = await fetch(
           "http://localhost:3000/api/products/productsData?type=recent"
         );
@@ -27,8 +33,11 @@ export default function DailySells() {
 
         const items = await response.json();
         setProducts(items.data);
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
+      } finally{
+        setIsLoading(false);
       }
     }
 
@@ -79,8 +88,15 @@ export default function DailySells() {
       </div>
 
       {/*fetch the best sales product from the api*/}
-
-      {products && products.length > 0 && (
+      {isLoading ? (
+        <div className="flex gap-6 overflow-auto mx-3">
+        <DailySellsSkeleton/>
+        <DailySellsSkeleton/>
+        <DailySellsSkeleton/>
+        <DailySellsSkeleton/>
+        </div>
+      ) :  
+      products.length > 0 ? (
         <div className="flex gap-6 overflow-auto mx-3">
           {products.map((item: ProductsType, index: number) => (
             <div
@@ -121,9 +137,12 @@ export default function DailySells() {
                 Add To Cart
               </Button>
             </div>
+            
           ))}
         </div>
-      )}
+      ) : <p>No Products Found</p>
+    }
+  
       </div>
 
       

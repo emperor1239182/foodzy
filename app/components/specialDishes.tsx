@@ -1,66 +1,115 @@
-"use client"
-import { LucideChevronLeft, LucideChevronRight} from "lucide-react";
+"use client";
+import { LucideChevronLeft, LucideChevronRight, Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ProductsType } from "@/lib/types";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import SpecialDishesSkeleton from "./loadingSkeleton/specialDishesSkeleton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 export default function SpecialDishes() {
-    const [dishes, setDishes] = useState<ProductsType[]>([])
-    const [loading, setLoading] = useState(false);
+  const [dishes, setDishes] = useState<ProductsType[]>([]);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(()=>{
-        const getDishes = async () =>{
-            setLoading(true);
-            try{
-                const response = await fetch('http://localhost:3000/api/products/productsData?category=Food');
 
-                if(!response.ok){
-                    throw new Error("Couldnt fetch products");
-                }
+  useEffect(() => {
+    const getDishes = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/products/productsData?category=Food",
+        );
 
-              const items = await response.json()
-              setDishes(items.data)
-              setLoading(false)
-
-            } catch(error){
-                console.log(error)
-            } finally{
-                setLoading(false)
-            }
+        if (!response.ok) {
+          throw new Error("Couldnt fetch products");
         }
-        getDishes()
-    }, [])
 
-    return (
-        <section className="mt-10">
-        <h3 className="text-p1-color text-[10px] uppercase font-bold">Special Dishes</h3> <br/>
-        <div className="flex justify-between items-center">
-        <h1 className="font-bold text-xl lg:text-3xl leading-5 sm:leading-7">Standout Dishes <br/> From Our Menu</h1>
+        const items = await response.json();
+        setDishes(items.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getDishes();
+  }, []);
+
+  return (
+    <section className="mt-10 mx-3">
+      <h3 className="text-p1-color text-[10px] uppercase font-bold">
+        Special Dishes
+      </h3>
+      <br />
+      <div className="flex justify-between items-center">
+        <h1 className="font-bold text-xl lg:text-3xl leading-5 sm:leading-7">
+          Standout Dishes <br /> From Our Menu
+        </h1>
         <div className="flex gap-3 items-center">
-            <div className="rounded-full border-0 bg-p2-color p-2"><LucideChevronLeft size={20} /></div>
-            <div className="rounded-full border-0 bg-p2-color p-2"><LucideChevronRight size={20}/></div>
+          <div className="rounded-full border-0 bg-p2-color p-2">
+            <LucideChevronLeft size={20} />
+          </div>
+          <div className="rounded-full border-0 bg-p2-color p-2">
+            <LucideChevronRight size={20} />
+          </div>
         </div>
+      </div>
+      {/*display fetched dishes*/}
+      {loading ? (
+        <div className="flex gap-3 overflow-auto mt-4">
+          <SpecialDishesSkeleton />
+          <SpecialDishesSkeleton />
+          <SpecialDishesSkeleton />
+          <SpecialDishesSkeleton />
         </div>
-
-        {/*display fetched dishes*/}
-        
-        {loading && (
-            <p>Loading...</p>
-        )}
-            {dishes && dishes.length > 0 && (
-                <div className="flex gap-3">
-                    {dishes.map((dish, index)=>(
-                        <div key={index} className="flex flex-col gap-2">
-                            <div className="flex justify-center items-center">
-                                <Image src={dish.image} width={100} height={100} alt="Standout Dishes"/>
-                            </div>
-                            <p>{dish.name}</p>
-                            <p>{dish.category}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
-            {!loading && dishes.length === 0 && <p>No dishes found</p>}
-      
-        </section>
-    );
+      ) : dishes.length > 0 ? (
+        <div className="flex gap-3 overflow-auto mt-4 items-start">
+          {dishes.map((dish, index) => (
+            <div
+              key={index}
+              className="flex flex-col gap-2 items-center border-0 p-2 rounded-xl shadow-2xl relative"
+            >
+              <div className="flex justify-center items-center w-40 h-40 p-2 rounded">
+                <Image
+                  src={dish.image}
+                  width={80}
+                  height={80}
+                  alt="Standout Dishes"
+                  className="w-20 h-20 rounded-4xl object-contain"
+                />
+              </div>
+              <p className="font-bold text-[12px]">{dish.name}</p>
+              <p className="text-p2-color text-sm">{dish.category}</p>
+              <Button
+                variant="destructive"
+                className="rounded-bl-4xl flex items-center justify-center p-1 absolute top-1 right-0 w-8 h-8"
+              >
+                <Heart />
+              </Button>
+              <Accordion type="single" collapsible className="max-w-lg">
+                 <AccordionItem key={dish.name} value={dish.name}>
+                <AccordionTrigger>
+                  
+                    View full details
+                
+                </AccordionTrigger>
+                 <AccordionContent className="text-[13px] font-semibold">
+                  {dish.description}
+                </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No dishes found</p>
+      )}
+    </section>
+  );
 }
