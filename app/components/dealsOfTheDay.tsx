@@ -15,7 +15,7 @@ export default function DealsOfTheDay() {
       try {
         setLoading(true);
         const response = await fetch(
-          "http://localhost:3000/api/products/productsData?category=Fruit",
+          "/api/products/productsData?category=Fruit",
         );
         if (!response.ok) {
           throw new Error("Failed to fetch products");

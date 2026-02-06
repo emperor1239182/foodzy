@@ -23,7 +23,7 @@ export default function SpecialDishes() {
       setLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:3000/api/products/productsData?category=Food"
+          "/api/products/productsData?category=Food"
         );
 
         if (!response.ok) {

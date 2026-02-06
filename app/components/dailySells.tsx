@@ -24,7 +24,7 @@ export default function DailySells() {
       try {
         setIsLoading(true)
         const response = await fetch(
-          "http://localhost:3000/api/products/productsData?type=recent"
+          "/api/products/productsData?type=recent"
         );
 
         if (!response.ok) {
