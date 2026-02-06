@@ -23,7 +23,7 @@ export default function SpecialDishes() {
       setLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:3000/api/products/productsData?category=Food",
+          "http://localhost:3000/api/products/productsData?category=Food"
         );
 
         if (!response.ok) {
@@ -80,7 +80,7 @@ export default function SpecialDishes() {
           {dishes.map((dish, index) => (
             <div
               key={index}
-              className="flex flex-col gap-1 items-center border-0 p-2 rounded-xl shadow-2xl relative"
+              className="flex flex-col gap-1 items-center border-0 p-2 rounded-sm shadow-lg relative"
             >
               <div className="flex justify-center items-center w-40 h-40 p-2 rounded">
                 <Image

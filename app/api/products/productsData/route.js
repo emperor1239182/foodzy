@@ -12,15 +12,19 @@ export async function GET(request) {
     const category = searchParams.get("category");
 
     let products;
+    const key = type || category || "default";
 
-    switch(type | category){
-      case type === "recent" :
+    switch (key) {
+      case "recent":
         products = await Products.find({ recent: true }).limit(6);
         break;
-      case category === "Food" :
-        products = await Products.find({ category: "Food"}).limit(6);
+      case "Food":
+        products = await Products.find({ category: "Food" }).limit(6);
         break;
-        default :
+      case "Fruit":
+        products = await Products.find({ category: "Fruit" }).limit(4);
+        break;
+      default:
         products = await Products.find().limit(6);
     }
 

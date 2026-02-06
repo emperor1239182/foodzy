@@ -5,7 +5,7 @@ export default function DailySellsSkeleton() {
     
 
     return (
-        <Card className="w-40 flex-shrink-0">
+        <Card className="w-40 shrink-0">
       <CardContent className="p-2 flex flex-col gap-1">
         <div className="flex flex-col gap-1 p-2">
           <Skeleton className="h-4 w-20" />

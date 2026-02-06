@@ -12,10 +12,10 @@ const productsData = [
     rating: 4.6,
     tag: "popular",
   },
-  {
+  /*{
     name: "Cheese Pizza Slice",
     price: 3.5,
-    category: "Food",
+    category: "Pizza",
     image: "/assets/pizza.png",
     stock: 100,
     description:
@@ -24,7 +24,7 @@ const productsData = [
     sold: 340,
     rating: 4.7,
     tag: "bestseller",
-  },
+  }, */
   {
     name: "Spicy Chicken Wings",
     price: 6.75,

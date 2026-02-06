@@ -15,3 +15,8 @@ export interface ProductsType {
     rating : number
     tag : string
 }
+export type ChooseType = {
+    icon: React.ReactNode;
+    heading: string;
+    text: string;
+}
