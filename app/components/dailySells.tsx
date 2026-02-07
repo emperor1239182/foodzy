@@ -45,7 +45,7 @@ export default function DailySells() {
   }, []);
 
   return (
-    <section className="mt-8 ">
+    <section className="mt-30 ">
       <div className="hidden sm:flex justify-between items-center mb-4">
         <h2 className="font-bold text-[12px] lg:text-lg text-p2-color">
           Daily Best Sells
@@ -97,7 +97,7 @@ export default function DailySells() {
         </div>
       ) :  
       products.length > 0 ? (
-        <div className="flex gap-6 overflow-auto mx-3">
+        <div className="flex gap-6 overflow-auto mx-3 hide-scrollbar">
           {products.map((item: ProductsType, index: number) => (
             <div
               key={index}

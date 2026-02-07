@@ -43,7 +43,7 @@ export default function SpecialDishes() {
   }, []);
 
   return (
-    <section className="mt-10 mx-3">
+    <section className="mt-30 mx-3">
       <h3 className="text-p1-color text-[10px] uppercase font-bold">
         Special Dishes
       </h3>
@@ -76,7 +76,7 @@ export default function SpecialDishes() {
           <SpecialDishesSkeleton />
         </div>
       ) : dishes.length > 0 ? (
-        <div className="flex gap-3 overflow-auto mt-4 items-start">
+        <div className="flex gap-3 overflow-auto mt-4 items-start hide-scrollbar">
           {dishes.map((dish, index) => (
             <div
               key={index}

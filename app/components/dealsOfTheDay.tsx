@@ -33,7 +33,7 @@ export default function DealsOfTheDay() {
   }, []);
 
   return (
-    <section className="mt-10 mx-3">
+    <section className="mt-12 mx-3">
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-xl max:lg-text-2xl font-bold">Deals Of The Day</h3>
         <p className="text-sm cursor-pointer">All Deals →</p>
@@ -48,7 +48,7 @@ export default function DealsOfTheDay() {
         </div>
       ) : 
       deals.length > 0 ? (
-        <div className="flex gap-6 overflow-auto pb-12">
+        <div className="flex gap-6 overflow-auto pb-12 hide-scrollbar">
           {deals.map((deal, index) => (
             <div key={index} className="w-70 relative shrink-0">
               <Image

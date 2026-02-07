@@ -7,6 +7,7 @@ import DailySells from "./components/dailySells";
 import SpecialDishes from "./components/specialDishes";
 import DealsOfTheDay from "./components/dealsOfTheDay";
 import WhyChooseUs from "./components/whyChooseUs";
+import Advert from "./components/advert";
 
 export default function Page() {
   return (
@@ -55,6 +56,7 @@ export default function Page() {
           <SpecialDishes/>
           <DealsOfTheDay/>
           <WhyChooseUs/>
+          <Advert/>
         </section>
       </header>
     </>

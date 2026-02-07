@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
     },
   ];
   return (
-    <section className="mt-10 mx-3">
+    <section className="mt-30 mx-3">
       <div className="flex flex-col sm:flex-row sm:justify-around">
        <div className="w-full max-w-48">
       <AspectRatio ratio={1 / 1} className="bg-muted rounded-lg">
