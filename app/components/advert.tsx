@@ -68,7 +68,7 @@ export default function Advert() {
         </div>
       </div>
 
-   <div className="flex flex-col sm:flex-row gap-10 mt-5 p-1 sm:justify-evenly sm:items-center">
+   <div className="flex flex-col flex-wrap sm:flex-row gap-10 mt-5 p-1 sm:justify-evenly sm:items-center">
   {ads.map((advert, index) => (
     <div
       key={index}
@@ -80,7 +80,7 @@ export default function Advert() {
     >
       <p>{advert.icon}</p>
       <div className="flex flex-col gap-1">
-        <p className="font-bold text-[15px]">{advert.heading}</p>
+        <p className="font-bold text-[15px] sm:text-[13px]">{advert.heading}</p>
         <p className="text-[10px]">{advert.text}</p>
       </div>
     </div>

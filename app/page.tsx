@@ -8,6 +8,7 @@ import SpecialDishes from "./components/specialDishes";
 import DealsOfTheDay from "./components/dealsOfTheDay";
 import WhyChooseUs from "./components/whyChooseUs";
 import Advert from "./components/advert";
+import Footer from "./components/footer";
 
 export default function Page() {
   return (
@@ -49,6 +50,7 @@ export default function Page() {
             </div>
           </div>
         </div>
+        </header>
 
         <section className="sm:mx-20 xl:mx-60 ">
           <Recommended />
@@ -58,7 +60,9 @@ export default function Page() {
           <WhyChooseUs/>
           <Advert/>
         </section>
-      </header>
+        
+        <Footer/>
+      
     </>
   );
 }

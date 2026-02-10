@@ -2,9 +2,18 @@
 import { Phone, User, Heart, ShoppingCart, Menu, XIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils"
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+})
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+ 
   return (
     <nav>
       <div className="hidden sm:flex justify-evenly">
@@ -35,27 +44,27 @@ export default function Nav() {
 
         <Menu className="sm:hidden" onClick={() => setIsOpen(true)} />
 
-        {isOpen && (
-          <nav className="w-full h-screen bg-accent z-20 fixed inset-0 text-2xl p-4 transition-all">
-            <XIcon className="absolute top-2 right-3" onClick={()=> setIsOpen(false)}/>
-            <ul className="flex flex-col gap-8 items-center mt-9">
-              <li>Home</li>
-              <li>Category</li>
-              <li>Products</li>
-              <li>Pages</li>
-              <li>Blog</li>
-              <li className="flex flex-col items-center text-[12px]">
-            <User size={18} /> Account
-          </li>
-          <li className="flex flex-col items-center text-[12px]">
-            <Heart size={18} /> Wishlist
-          </li>
-          <li className="flex flex-col items-center text-[12px]">
-            <ShoppingCart size={18} /> Cart
-          </li>
-            </ul>
-          </nav>
-        )}
+    {isOpen && (
+  <nav className="w-full h-screen bg-accent z-20 fixed inset-0 text-2xl p-4 animate-in slide-in-from-right duration-800">
+    <XIcon className="absolute top-2 right-3" onClick={()=> setIsOpen(false)}/>
+    <ul className={cn("flex flex-col gap-8 items-center mt-9")}>
+      <li>Home</li>
+      <li>Category</li>
+      <li>Products</li>
+      <li>Pages</li>
+      <li>Blog</li>
+      <li className="flex flex-col items-center text-[12px]">
+        <User size={18} /> Account
+      </li>
+      <li className="flex flex-col items-center text-[12px]">
+        <Heart size={18} /> Wishlist
+      </li>
+      <li className="flex flex-col items-center text-[12px]">
+        <ShoppingCart size={18} /> Cart
+      </li>
+    </ul>
+  </nav>
+)}
 
         <div className="hidden border border-b-cyan-300 sm:flex w-80 justify-between items-center gap-1 ">
           <input className="w-[59%]" />

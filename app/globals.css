@@ -91,6 +91,7 @@
   --p2-color: #ADADAD;
   --p3-color: #3BB77E;
   --daily-hero: url('/assets/bestSales.png');
+
 }
 
 .dark {
@@ -141,5 +142,9 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   } 
+
+  .footerText{
+    @apply text-[11px] text-gray-400
+  }
   
 }
