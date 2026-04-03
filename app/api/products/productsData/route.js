@@ -10,9 +10,12 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const type = searchParams.get("type");
     const category = searchParams.get("category");
+    const sort = searchParams.get("sortBy");
+
 
     let products;
-    const key = type || category || "default";
+
+    const key = type || category || sort || "default";
 
     switch (key) {
       case "recent":
@@ -24,8 +27,17 @@ export async function GET(request) {
       case "Fruit":
         products = await Products.find({ category: "Fruit" }).limit(4);
         break;
+        case "new" :
+          products = await Products.find({tag : "new"});
+          break;
+          case "popular" :
+          products = await Products.find({tag : "popular"});
+          break;
+          case "bestSeller" :
+          products = await Products.find({tag : "bestsales"});
+          break;
       default:
-        products = await Products.find().limit(6);
+        products = await Products.find();
     }
 
     return NextResponse.json(
@@ -42,7 +54,7 @@ export async function GET(request) {
         success: false,
         error: error.message,
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

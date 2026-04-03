@@ -15,7 +15,7 @@ import {
 import Image from "next/image";
 export default function Footer() {
   return (
-    <section className="grid grid-cols-2 gap-7 sm:grid-cols-4 justify-center bg-gray-200 mt-50 p-4">
+    <section className="grid grid-cols-1 gap-7 sm:grid-cols-4 justify-center bg-gray-200 mt-50 p-4">
 
       <div className="flex flex-col gap-3">
         <div className="flex items-center ">
@@ -32,7 +32,7 @@ export default function Footer() {
         </p>
 
         <div className="flex items-center gap-3">
-          <MapPin size={50} color="red"/>
+          <MapPin  color="red"/>
           <p className="footerText">
             51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
           </p>

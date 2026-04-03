@@ -36,7 +36,7 @@ const productsData = [
     recent: true,
     sold: 98,
     rating: 4.4,
-    tag: "hot",
+    tag: "popular",
   },
   {
     name: "Fresh Red Apples",
@@ -49,7 +49,7 @@ const productsData = [
     recent: false,
     sold: 410,
     rating: 4.8,
-    tag: "healthy",
+    tag: "bestsales",
   },
   {
     name: "Organic Bananas",
@@ -62,7 +62,7 @@ const productsData = [
     recent: false,
     sold: 520,
     rating: 4.9,
-    tag: "organic",
+    tag: "new",
   },
   {
     name: "Sweet Strawberries Pack",
@@ -75,7 +75,7 @@ const productsData = [
     recent: true,
     sold: 130,
     rating: 4.6,
-    tag: "fresh",
+    tag: "bestsales",
   },
   {
     name: "Crunchy Potato Chips",
@@ -88,7 +88,7 @@ const productsData = [
     recent: false,
     sold: 600,
     rating: 4.3,
-    tag: "snack",
+    tag: "bestsales",
   },
   {
     name: "Chocolate Chip Cookies",
@@ -101,7 +101,7 @@ const productsData = [
     recent: true,
     sold: 275,
     rating: 4.7,
-    tag: "sweet",
+    tag: "popular",
   },
   {
     name: "Salted Popcorn",
@@ -114,7 +114,7 @@ const productsData = [
     recent: false,
     sold: 340,
     rating: 4.2,
-    tag: "light",
+    tag: "popular",
   },
   {
     name: "Mango Fruit Bowl",
@@ -127,7 +127,7 @@ const productsData = [
     recent: true,
     sold: 150,
     rating: 4.6,
-    tag: "tropical",
+    tag: "popular",
   },
   {
     name: "Grilled Chicken Sandwich",
@@ -140,7 +140,7 @@ const productsData = [
     recent: false,
     sold: 190,
     rating: 4.5,
-    tag: "lunch",
+    tag: "new",
   },
   {
     name: "Grape Water",
@@ -153,7 +153,7 @@ const productsData = [
     recent: true,
     sold: 165,
     rating: 4.4,
-    tag: "local",
+    tag: "new",
   },
   {
     name: "Milk Jar",
@@ -166,7 +166,7 @@ const productsData = [
     recent: false,
     sold: 260,
     rating: 4.5,
-    tag: "vitamin",
+    tag: "bestsales",
   },
   {
     name: "Pistachio",
@@ -179,7 +179,7 @@ const productsData = [
     recent: false,
     sold: 210,
     rating: 4.3,
-    tag: "fastfood",
+    tag: "bestsales",
   },
   {
     name: "Macarroni",
@@ -192,7 +192,7 @@ const productsData = [
     recent: true,
     sold: 145,
     rating: 4.7,
-    tag: "healthy",
+    tag: "new",
   },
   {
     name: "Water Melon",
@@ -205,7 +205,7 @@ const productsData = [
     recent: false,
     sold: 390,
     rating: 4.4,
-    tag: "energy",
+    tag: "popular",
   },
   {
     name: "Vegetable Salad",
@@ -218,7 +218,7 @@ const productsData = [
     recent: true,
     sold: 175,
     rating: 4.6,
-    tag: "dessert",
+    tag: "new",
   },
   {
     name: "Cocoa",
@@ -231,7 +231,7 @@ const productsData = [
     recent: false,
     sold: 305,
     rating: 4.5,
-    tag: "pastry",
+    tag: "popular",
   },
   {
     name: "Watermelon Slices",
@@ -244,7 +244,7 @@ const productsData = [
     recent: true,
     sold: 160,
     rating: 4.6,
-    tag: "refreshing",
+    tag: "bestsales",
   },
   {
     name: "Muffin",
@@ -257,7 +257,7 @@ const productsData = [
     recent: false,
     sold: 230,
     rating: 4.4,
-    tag: "party",
+    tag: "bestsales",
   },
 ];
 

@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -38,11 +39,12 @@ export default function Nav() {
     <nav>
       <div className="hidden sm:flex justify-evenly">
         <ul className="flex items center gap-5 text-sm">
-          <Button variant="link">Home</Button>
+          <Button variant="link" className="cursor-pointer">
+            <Link href="/"> Home </Link></Button>
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="link">
+                <Button variant="link" className="cursor-pointer">
                   Category <ArrowDown />
                 </Button>
               </DropdownMenuTrigger>
@@ -64,7 +66,7 @@ export default function Nav() {
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="link">
+                <Button variant="link" className="cursor-pointer">
                   Products <ArrowDown />
                 </Button>
               </DropdownMenuTrigger>
@@ -83,8 +85,8 @@ export default function Nav() {
             </DropdownMenu>
           </li>
 
-          <Button variant="link">Pages</Button>
-          <Button variant="link">Blog</Button>
+          <Button variant="link" className="cursor-pointer">Pages</Button>
+          <Button variant="link" className="cursor-pointer">Blog</Button>
         </ul>
         <div className="hidden sm:flex items-center gap-2">
           <Phone size={17} />
@@ -137,7 +139,7 @@ export default function Nav() {
               id="inline-end-input"
             />
             <InputGroupAddon align="inline-end">
-              <Search size={10} />
+              <div className="bg-black p-2 rounded "><Search size={13} color="white"/></div>
             </InputGroupAddon>
             <InputGroupButton>
               All Categories

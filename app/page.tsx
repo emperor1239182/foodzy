@@ -8,13 +8,13 @@ import SpecialDishes from "./components/specialDishes";
 import DealsOfTheDay from "./components/dealsOfTheDay";
 import WhyChooseUs from "./components/whyChooseUs";
 import Advert from "./components/advert";
-import Footer from "./components/footer";
+
 
 export default function Page() {
   return (
     <>
       <header>
-        <Nav />
+       
 
         <div className="hero bg-(image:--hero-background) bg-cover bg-center bg-no-repeat">
           <div className="max-w-7xl mx-auto px-6 py-20 sm:flex">
@@ -61,7 +61,7 @@ export default function Page() {
           <Advert/>
         </section>
         
-        <Footer/>
+
       
     </>
   );
