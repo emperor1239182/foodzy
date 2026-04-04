@@ -67,7 +67,7 @@ export default function Nav() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="link" className="cursor-pointer">
-                  Products <ArrowDown />
+                   Products <ArrowDown />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>

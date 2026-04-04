@@ -54,13 +54,13 @@ export default function SpecialDishes() {
         </h1>
         <div className="flex gap-3 items-center">
           <div
-            className={cn("rounded-full border-0 bg-p2-color p-1 sm:p-2", arrow === "left" && "bg-p1-color text-white")}
+            className={cn("rounded-full border-0 bg-[#E9E9E9] p-1 sm:p-2", arrow === "left" && "bg-p1-color text-white")}
             onClick={() => setArrow("left")}
           >
             <LucideChevronLeft size={15} />
           </div>
           <div
-            className={cn("rounded-full border-0 bg-p2-color p-1 sm:p-2", arrow === "right" && "bg-p1-color text-white")}
+            className={cn("rounded-full border-0 bg-[#E9E9E9] p-1 sm:p-2", arrow === "right" && "bg-p1-color text-white")}
             onClick={() => setArrow("right")}
           >
             <LucideChevronRight size={15} />

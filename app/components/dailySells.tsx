@@ -122,7 +122,7 @@ export default function DailySells() {
                 >
                   {item.name}
                 </p>
-                <p className="text-sm text-p2-color font-bold">
+                <p className="text-sm text-[#777777] font-bold">
                   Rating: {item.rating} / 5
                 </p>
                 <p className="text-p3-color font-bold text-[14px]">

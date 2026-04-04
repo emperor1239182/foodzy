@@ -12,8 +12,6 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-
-
 export default function FilterBar({ allProducts }: { allProducts: number }) {
   const [cell, setCell] = useState<"cell" | "filter">();
 
@@ -23,8 +21,8 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
   const handleSortChange = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("sortBy", value);
+    params.set("page", "1");
     router.push(`?${params.toString()}`);
-  
   };
 
   return (
@@ -53,7 +51,7 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
         <p className="text-[12px]">We found {allProducts} items for you!</p>
       </div>
 
-      <div className="flex items-center gap-2 bg-gray-100 p-1 rounded">
+      <div className="flex items-center gap-6 bg-gray-100 p-1 rounded-lg">
         <p className="sm:text-[12px] text-[13px]">Sort By</p>
         <Select onValueChange={handleSortChange}>
           <SelectTrigger className="sm:w-35 w-20">
@@ -61,6 +59,7 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
+              <SelectItem value="featured">Featured</SelectItem>
               <SelectItem value="new">New</SelectItem>
               <SelectItem value="popular">Popular</SelectItem>
               <SelectItem value="bestsales">Best Sales</SelectItem>
