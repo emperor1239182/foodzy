@@ -43,6 +43,7 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
             className={cn(
               "p-1 bg-white rounded flex justify-center items-center",
               cell === "filter" && "bg-red-500 text-white",
+              "hidden sm:block",
             )}
           >
             <SlidersHorizontal size={14} />
@@ -52,9 +53,9 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
       </div>
 
       <div className="flex items-center gap-6 bg-gray-100 p-1 rounded-lg">
-        <p className="sm:text-[12px] text-[13px]">Sort By</p>
+        <p className="sm:text-[12px] text-[13px] hidden sm:block">Sort By</p>
         <Select onValueChange={handleSortChange}>
-          <SelectTrigger className="sm:w-35 w-20">
+          <SelectTrigger className="sm:w-45 w-28">
             <SelectValue placeholder="Featured" />
           </SelectTrigger>
           <SelectContent>

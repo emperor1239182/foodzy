@@ -76,20 +76,20 @@ export default async function ShopPage({
       <div className="sm:col-span-2">
         <FilterBar allProducts={totalCount} />
       </div>
-      <div className="grid grid-cols-4 col-span-2 gap-y-10">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-span-2 gap-y-10 gap-x-10">
         {allProducts.length > 0 &&
           allProducts.map((product, index) => (
             <div
               key={index}
-              className="w-[200px] flex flex-col gap-2 items-center rounded border border-gray-200 p-2"
+              className=" w-full max-w-[200px] flex flex-col gap-2 items-center rounded border border-gray-200 p-2"
             >
-              <div className="w-[160px] flex items-center justify-center">
+              <div className="w-[120px] flex items-center justify-center">
                 <Image
                   src={product.image}
                   alt="Shop item image"
                   width={100}
                   height={100}
-                  className="w-40 h-40"
+                  className="w-30 h-30"
                 />
               </div>
               <p className="text-[13px] font-semibold text-[#777777]">
