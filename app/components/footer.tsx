@@ -14,14 +14,18 @@ import {
 } from "@/components/ui/input-group";
 import Image from "next/image";
 export default function Footer() {
+  const gradientTextLight =
+    "bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent";
+
   return (
     <section className="grid grid-cols-1 gap-7 sm:grid-cols-4 justify-center bg-gray-200 mt-50 p-4">
-
       <div className="flex flex-col gap-3">
         <div className="flex items-center ">
           <Image src="/assets/chef.png" width={70} height={70} alt="app icon" />
           <p className="flex flex-col ">
-            <span className="font-extrabold text-sm">Foodzy</span>
+            <span className={`font-extrabold text-sm ${gradientTextLight}`}>
+              Foodzy
+            </span>
             <span className="text-[11px]">A Treasure of Tastes</span>
           </p>
         </div>
@@ -32,23 +36,23 @@ export default function Footer() {
         </p>
 
         <div className="flex items-center gap-3">
-          <MapPin  color="red"/>
+          <MapPin color="red" />
           <p className="footerText">
             51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <Mail color="red"/> <p className="footerText">foodzy@gmail.com</p>
+          <Mail color="red" /> <p className="footerText">foodzy@gmail.com</p>
         </div>
 
         <div className="flex items-center gap-3">
-          <Phone color="red"/>
+          <Phone color="red" />
           <p className="footerText">+91 123 4567890</p>
         </div>
       </div>
 
-      <div  className="flex flex-col gap-2 *:text-[12px] *:text-gray-400 [&>h5]:text-black [&>h5]:text-[20px] [&>h5]:font-bold">
+      <div className="flex flex-col gap-2 *:text-[12px] *:text-gray-400 [&>h5]:text-black [&>h5]:text-[20px] [&>h5]:font-bold">
         <h5 className="font-bold text-[20px]">Company</h5>
         <p>About Us</p>
         <p>Delivery information</p>

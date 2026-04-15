@@ -34,13 +34,16 @@ import Link from "next/link";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const gradientTextLight =
+    "bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent";
 
   return (
     <nav>
       <div className="hidden sm:flex justify-evenly">
         <ul className="flex items center gap-5 text-sm">
           <Button variant="link" className="cursor-pointer">
-            <Link href="/"> Home </Link></Button>
+            <Link href="/"> Home </Link>
+          </Button>
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -67,7 +70,7 @@ export default function Nav() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="link" className="cursor-pointer">
-                   Products <ArrowDown />
+                  Products <ArrowDown />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -85,8 +88,12 @@ export default function Nav() {
             </DropdownMenu>
           </li>
 
-          <Button variant="link" className="cursor-pointer">Pages</Button>
-          <Button variant="link" className="cursor-pointer">Blog</Button>
+          <Button variant="link" className="cursor-pointer">
+            Pages
+          </Button>
+          <Button variant="link" className="cursor-pointer">
+            Blog
+          </Button>
         </ul>
         <div className="hidden sm:flex items-center gap-2">
           <Phone size={17} />
@@ -100,7 +107,7 @@ export default function Nav() {
         <div className="flex items-center ">
           <Image src="/assets/chef.png" width={70} height={70} alt="app icon" />
           <p className="flex flex-col ">
-            <span className="font-extrabold text-sm">Foodzy</span>
+            <span className={`font-extrabold text-sm ${gradientTextLight}`}>Foodzy</span>
             <span className="text-[11px]">A Treasure of Tastes</span>
           </p>
         </div>
@@ -108,15 +115,26 @@ export default function Nav() {
         <Menu className="sm:hidden" onClick={() => setIsOpen(true)} />
 
         {isOpen && (
-          <nav className="w-full h-screen bg-accent z-20 fixed inset-0 text-2xl p-4 animate-in slide-in-from-right duration-800">
+          <nav className="w-full h-screen bg-accent z-20 fixed inset-0 text-2xl p-4 animate-in slide-in-from-right duration-800 bg-linear-to-br  from-zinc-900 via-zinc-800 to-zinc-700 text-white">
             <XIcon
               className="absolute top-2 right-3"
               onClick={() => setIsOpen(false)}
             />
             <ul className={cn("flex flex-col gap-8 items-center mt-9")}>
-              <li>Home</li>
+              <li>
+                {" "}
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  {" "}
+                  Home{" "}
+                </Link>{" "}
+              </li>
               <li>Category</li>
-              <li>Products</li>
+              <li>
+                <Link href="/shop" onClick={() => setIsOpen(false)}>
+                  {" "}
+                  Products{" "}
+                </Link>
+              </li>
               <li>Pages</li>
               <li>Blog</li>
               <li className="flex flex-col items-center text-[12px]">
@@ -139,7 +157,9 @@ export default function Nav() {
               id="inline-end-input"
             />
             <InputGroupAddon align="inline-end">
-              <div className="bg-black p-2 rounded "><Search size={13} color="white"/></div>
+              <div className="bg-black p-2 rounded ">
+                <Search size={13} color="white" />
+              </div>
             </InputGroupAddon>
             <InputGroupButton>
               All Categories

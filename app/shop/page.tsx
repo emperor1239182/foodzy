@@ -81,9 +81,9 @@ export default async function ShopPage({
           allProducts.map((product, index) => (
             <div
               key={index}
-              className=" w-full max-w-[200px] flex flex-col gap-2 items-center rounded border border-gray-200 p-2"
+              className=" w-full max-w-50 flex flex-col gap-2 items-center rounded border border-gray-200 p-2"
             >
-              <div className="w-[120px] flex items-center justify-center">
+              <div className="w-30 flex items-center justify-center">
                 <Image
                   src={product.image}
                   alt="Shop item image"

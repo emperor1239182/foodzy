@@ -18,6 +18,8 @@ export default function SpecialDishes() {
   const [loading, setLoading] = useState(false);
   const [arrow, setArrow] = useState<"left" | "right">();
 
+  const gradientTextLight = "bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent"
+
   useEffect(() => {
     const getDishes = async () => {
       setLoading(true);
@@ -49,7 +51,7 @@ export default function SpecialDishes() {
       </h3>
       <br />
       <div className="flex justify-between items-center">
-        <h1 className="font-bold text-xl lg:text-3xl leading-5 sm:leading-7">
+        <h1 className={`font-bold text-xl lg:text-3xl leading-5 sm:leading-7 ${gradientTextLight}`}>
           Standout Dishes <br /> From Our Menu
         </h1>
         <div className="flex gap-3 items-center">
@@ -111,7 +113,7 @@ export default function SpecialDishes() {
           ))}
         </div>
       ) : (
-        <p>No dishes found</p>
+        <p className="mt-5">Failed to fetch products.</p>
       )}
     </section>
   );

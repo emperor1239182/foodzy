@@ -10,6 +10,8 @@ export default function DealsOfTheDay() {
   const [deals, setDeals] = useState<ProductsType[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const gradientTextLight = "bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent"
+
   useEffect(() => {
     const getDeals = async () => {
       try {
@@ -35,7 +37,7 @@ export default function DealsOfTheDay() {
   return (
     <section className="mt-12 mx-3">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-xl max:lg-text-2xl font-bold">Deals Of The Day</h3>
+        <h3 className={`text-xl lg:text-3xl font-bold ${gradientTextLight}`}>Deals Of The Day</h3>
         <p className="text-sm cursor-pointer">All Deals →</p>
       </div>
 
@@ -73,7 +75,7 @@ export default function DealsOfTheDay() {
           ))}
         </div>
       ) : (
-        <p>no products</p>
+        <p>Failed to fetch products.</p>
       )}
     </section>
   );

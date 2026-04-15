@@ -12,7 +12,7 @@ const gudea = Gudea({
   subsets: ["latin"],
 });
 
-
+const gradientTextLight = "bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent"
 
 
 export default function DailySells() {
@@ -47,7 +47,7 @@ export default function DailySells() {
   return (
     <section className="mt-30 ">
       <div className="hidden sm:flex justify-between items-center mb-4">
-        <h2 className="font-bold text-[12px] lg:text-lg text-p2-color">
+        <h2 className={`${gradientTextLight} font-bold text-2xl md:text-3xl lg:text-4xl xl:text-4xl `}>
           Daily Best Sells
         </h2>
         <div className="flex items-center font-semibold gap-2 text-[12px] lg:text-[14px]">
@@ -140,7 +140,7 @@ export default function DailySells() {
             
           ))}
         </div>
-      ) : <p>No Products Found</p>
+      ) : <p>Failed to fetch products.</p>
     }
   
       </div>

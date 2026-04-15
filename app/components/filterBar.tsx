@@ -33,7 +33,7 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
             onClick={() => setCell("cell")}
             className={cn(
               "p-1 bg-white rounded flex justify-center items-center",
-              cell === "cell" && "bg-red-500 text-white",
+              cell === "cell" && "bg-red-500 text-white", "hidden sm:block"
             )}
           >
             <TableCellsSplit size={14} />
@@ -43,7 +43,6 @@ export default function FilterBar({ allProducts }: { allProducts: number }) {
             className={cn(
               "p-1 bg-white rounded flex justify-center items-center",
               cell === "filter" && "bg-red-500 text-white",
-              "hidden sm:block",
             )}
           >
             <SlidersHorizontal size={14} />

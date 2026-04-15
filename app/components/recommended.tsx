@@ -27,6 +27,9 @@ const recommends: RecommendedTypes[] = [
     name: "Breakfast Food",
   },
 ];
+
+const gradientTextLight = "bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent"
+
 export default function Recommended() {
   return (
     <>
@@ -34,19 +37,19 @@ export default function Recommended() {
         <h3 className="text-p1-color text-center text-[10px] font-bold">
           CUSTOMER FAVORITES
         </h3>
-        <h1 className="font-bold text-center m-3 text-lg">
+        <h1 className={`font-bold text-center my-4 text-2xl ${gradientTextLight}`}>
           Popular Categories
         </h1>
-        <div className="flex flex-col gap-8 sm:gap-3 xl:gap-10 justify-center sm:justify-normal items-center sm:flex-row sm:mx-auto">
+        <div className="flex flex-col gap-20 sm:gap-3 xl:gap-10 justify-center sm:justify-normal items-center sm:flex-row sm:mx-auto">
           {recommends.map((meals, index) => (
             <div
-              className="flex flex-col items-center justify-center bg-white rounded-lg shadow-xl p-2 w-60 sm:w-40"
+              className="flex flex-col items-center justify-center bg-white rounded-lg shadow-xl p-8 sm:p-2 w-60 sm:w-40"
               key={index}
             >
               <div className="bg-gray-300 rounded-full p-2 flex justify-center items-center">
                 <Image src={meals.image} width={25} height={25} alt="burger" />
               </div>
-              <p className="font-bold max-xl:text-[13px]">{meals.name}</p>
+              <p className="font-bold text-[13px] max-sm:text-[20px]">{meals.name}</p>
               <p className="text-gray-400 text-[13px]">({meals.amount})</p>
             </div>
           ))}

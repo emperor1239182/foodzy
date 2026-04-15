@@ -21,10 +21,13 @@ export default function WhyChooseUs() {
       text: "Our burgers are grilled to perfection, with juicy parties and flavorful toppings that make every bite a delicious experience",
     },
   ];
+
+  const gradientText = "bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-500 bg-clip-text text-transparent"
+
   return (
     <section className="mt-30 mx-3">
       <div className="flex flex-col sm:flex-row sm:justify-around">
-       <div className="w-full max-w-48">
+       <div className="w-full max-w-48 m-auto sm:m-0">
       <AspectRatio ratio={1 / 1} className="bg-muted rounded-lg">
         <Image
           src="/assets/choose diet.png"
@@ -35,8 +38,8 @@ export default function WhyChooseUs() {
       </AspectRatio>
     </div>
 
-        <div className="flex flex-col gap-3 sm:w-60 lg:w-100">
-          <h3 className="font-bold text-lg">Why People Choose Us?</h3>
+        <div className="flex flex-col gap-20 sm:gap-3 sm:w-60 lg:w-100">
+          <h3 className={`font-bold text-2xl md:text-2xl xl:text-4xl leading-tight text-center sm:text-start ${gradientText}`}>Why People Choose Us?</h3>
 
           {benefits.map((benefit, index) => (
             <div
@@ -44,9 +47,9 @@ export default function WhyChooseUs() {
               className="flex items-center justify-between gap-2 rounded shadow-sm p-2"
             >
               <p className="text-yellow-500">{benefit.icon} </p>
-              <div className="flex flex-col gap-1">
-                <h4 className="font-semibold text-[14px]">{benefit.heading}</h4>
-                <p className="text-[11px] xl:text-16px">{benefit.text}</p>
+              <div className="flex flex-col gap-1 p-3">
+                <h4 className="font-semibold text-[18px] md:text-[20px] sm:text-[25px]">{benefit.heading}</h4>
+                <p className="text-[14px] xl:text-22px">{benefit.text}</p>
               </div>
             </div>
           ))}
